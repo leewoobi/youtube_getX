@@ -9,12 +9,7 @@ class App extends GetView<AppController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "gkdl",
-          style: TextStyle(color: Colors.white),
-        ),
-      ),
+      appBar: AppBar(),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
@@ -38,14 +33,14 @@ class App extends GetView<AppController> {
                 ),
                 label: "탐색"),
             BottomNavigationBarItem(
-              icon: Padding(
-                padding: const EdgeInsets.only(top: 8.0),
-                child: SvgPicture.asset(
-                  "assets/svg/icons/plus.svg",
-                  width: 35,
+                icon: Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: SvgPicture.asset(
+                    "assets/svg/icons/plus.svg",
+                    width: 35,
+                  ),
                 ),
-              ),
-            ),
+                label: "up"),
             BottomNavigationBarItem(
                 icon: SvgPicture.asset("assets/svg/icons/subs_off.svg"),
                 activeIcon: SvgPicture.asset("assets/svg/icons/subs_on.svg"),

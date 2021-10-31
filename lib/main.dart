@@ -17,11 +17,11 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: "youtube Clone App",
       theme: ThemeData(
-        primaryColor: Colors.white,
-        primarySwatch: Colors.blue,
+        appBarTheme: AppBarTheme(
+            backgroundColor: Colors.white,
+            titleTextStyle: TextStyle(color: Colors.black)),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Container(),
       initialBinding: InitBinding(),
       initialRoute: "/",
       getPages: [GetPage(name: "/", page: () => App())],
