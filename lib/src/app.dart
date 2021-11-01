@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:youtube_getx/controller/app_controller.dart';
+import 'package:youtube_getx/src/pages/explore.dart';
+import 'package:youtube_getx/src/pages/home.dart';
+import 'package:youtube_getx/src/pages/library.dart';
+import 'package:youtube_getx/src/pages/subscribe.dart';
+
+import 'controller/app_controller.dart';
 
 class App extends GetView<AppController> {
   const App({Key? key}) : super(key: key);
@@ -9,7 +14,26 @@ class App extends GetView<AppController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      body: Obx(() {
+        switch (RouteName.values[controller.currentIndex.value]) {
+          case RouteName.Home:
+            return Home();
+            break;
+          case RouteName.Explore:
+            return Explore();
+            break;
+          case RouteName.Add:
+            return Container();
+            break;
+          case RouteName.Subs:
+            return Subscribe();
+            break;
+          case RouteName.Library:
+            return Library();
+            break;
+        }
+        return Container();
+      }),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
@@ -50,13 +74,6 @@ class App extends GetView<AppController> {
                 activeIcon: SvgPicture.asset("assets/svg/icons/library_on.svg"),
                 label: "보관함"),
           ],
-        ),
-      ),
-      body: Container(
-        color: Colors.white,
-        child: Text(
-          "안보이네",
-          style: TextStyle(color: Colors.white),
         ),
       ),
     );

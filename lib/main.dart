@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-import 'package:youtube_getx/binding/init_binding.dart';
 import 'package:youtube_getx/src/app.dart';
+import 'package:youtube_getx/src/binding/init_binding.dart';
 
 void main() {
   runApp(MyApp());
