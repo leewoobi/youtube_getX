@@ -40,9 +40,6 @@ class VideoWWidget extends StatelessWidget {
                       icon: Icon(Icons.more_vert, size: 18))
                 ],
               ),
-              SizedBox(
-                width: 20,
-              ),
               Row(
                 children: [
                   Text('leeraincoat',
