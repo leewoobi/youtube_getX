@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:youtube_getx/src/components/custom_appbar.dart';
 import 'package:youtube_getx/src/components/video_widget.dart';
 
@@ -20,6 +21,7 @@ class Home extends StatelessWidget {
               return GestureDetector(
                 onTap: () {
                   // page route
+                  Get.toNamed("/detail/3123123");
                 },
                 child: VideoWWidget(),
               );

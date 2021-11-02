@@ -9,7 +9,7 @@ class VideoWWidget extends StatelessWidget {
 
   Widget _simpleDetailinfo() {
     return Container(
-      padding: const EdgeInsets.only(left: 10),
+      padding: const EdgeInsets.only(left: 10, bottom: 20),
       child: Row(
         children: [
           CircleAvatar(
@@ -30,7 +30,7 @@ class VideoWWidget extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      "leeraincoat 유튜브  다시보기 leeraincoat 유튜브  다시보기 leeraincoat 유튜브  다시보기",
+                      "도쿄리벤져스 유튜브  다시보기 도쿄리벤져스 유튜브  다시보기 도쿄리벤져스 유튜브  다시보기",
                       maxLines: 2,
                     ),
                   ),
@@ -40,9 +40,12 @@ class VideoWWidget extends StatelessWidget {
                       icon: Icon(Icons.more_vert, size: 18))
                 ],
               ),
+              SizedBox(
+                width: 20,
+              ),
               Row(
                 children: [
-                  Text('레인코트 킬러',
+                  Text('leeraincoat',
                       style: TextStyle(
                           fontSize: 12, color: Colors.black.withOpacity(0.8))),
                   Text("･"),
