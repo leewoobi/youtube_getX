@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_getx/src/models/video.dart';
+import 'package:intl/intl.dart';
 
 class VideoWWidget extends StatelessWidget {
-  const VideoWWidget({Key? key}) : super(key: key);
+  final Video video;
+  const VideoWWidget({Key? key, required this.video}) : super(key: key);
 
   Widget _thumbnail() {
-    return Container(height: 250, color: Colors.grey.withOpacity(0.5));
+    return Container(
+      height: 250,
+      color: Colors.grey.withOpacity(0.5),
+      child: Image.network(
+        video.snippet.thumbnails.medium.url,
+        fit: BoxFit.fitWidth,
+      ),
+    );
   }
 
   Widget _simpleDetailinfo() {
@@ -30,7 +40,7 @@ class VideoWWidget extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      "도쿄리벤져스 유튜브  다시보기 도쿄리벤져스 유튜브  다시보기 도쿄리벤져스 유튜브  다시보기",
+                      video.snippet.title,
                       maxLines: 2,
                     ),
                   ),
@@ -42,7 +52,7 @@ class VideoWWidget extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Text('leeraincoat',
+                  Text(video.snippet.channelTitle,
                       style: TextStyle(
                           fontSize: 12, color: Colors.black.withOpacity(0.8))),
                   Text("･"),
@@ -50,7 +60,9 @@ class VideoWWidget extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 12, color: Colors.black.withOpacity(0.6))),
                   Text("･"),
-                  Text('2021-11-01',
+                  Text(
+                      DateFormat("yyyy-mm-dd")
+                          .format(video.snippet.publishTime),
                       style: TextStyle(
                           fontSize: 12, color: Colors.black.withOpacity(0.6))),
                 ],
