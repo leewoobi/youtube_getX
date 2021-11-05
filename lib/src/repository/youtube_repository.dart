@@ -14,9 +14,9 @@ class YoutubeRepository extends GetConnect {
     super.onInit();
   }
 
-  Future<YoutubeVideoResult?> loadVideos() async {
+  Future<YoutubeVideoResult?> loadVideos(String nextPageToken) async {
     String url =
-        "/youtube/v3/search?part=snippet&channelId=UCelFN6fJ6OY6v8pbc_SLiXA&maxResults=10&order=date&type=video&videoDefinition=high&key=AIzaSyAvBnJBcAjvUdp4H6GFkVjJ2iCj7LFjgRM";
+        "/youtube/v3/search?part=snippet&channelId=UCelFN6fJ6OY6v8pbc_SLiXA&maxResults=10&order=date&type=video&videoDefinition=high&key=AIzaSyAvBnJBcAjvUdp4H6GFkVjJ2iCj7LFjgRM&pageToken=$nextPageToken";
     final response = await get(url);
     if (response.status.hasError) {
       return Future.error(response.statusText.toString());
