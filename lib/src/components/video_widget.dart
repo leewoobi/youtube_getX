@@ -5,21 +5,20 @@ import 'package:youtube_getx/src/controller/video_controller.dart';
 import 'package:youtube_getx/src/models/video.dart';
 import 'package:intl/intl.dart';
 
-class VideoWWidget extends StatefulWidget {
+class VideoWidget extends StatefulWidget {
   final Video video;
-  const VideoWWidget({Key? key, required this.video}) : super(key: key);
+  const VideoWidget({Key? key, required this.video}) : super(key: key);
 
   @override
-  State<VideoWWidget> createState() => _VideoWWidgetState();
+  State<VideoWidget> createState() => _VideoWidgetState();
 }
 
-class _VideoWWidgetState extends State<VideoWWidget> {
+class _VideoWidgetState extends State<VideoWidget> {
   VideoController? _videoController;
   @override
   void initState() {
     _videoController = Get.put(VideoController(video: widget.video),
         tag: widget.video.id.videoId);
-
     super.initState();
   }
 

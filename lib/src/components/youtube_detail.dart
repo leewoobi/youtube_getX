@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:youtube_getx/src/controller/youtube_detaill_controller.dart';
 
 class YoutubeDetail extends StatelessWidget {
   const YoutubeDetail({Key? key}) : super(key: key);
@@ -131,6 +132,7 @@ class YoutubeDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.find<YoutubeDetailController>();
     return Scaffold(
       appBar: AppBar(),
       body: Column(
